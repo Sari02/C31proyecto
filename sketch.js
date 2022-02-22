@@ -43,6 +43,9 @@ function setup() {
   }
 
   //crea los objetos partícula
+  if(frameCount%60===0){
+    particles.push(new Particle(random(10,790),10,10));
+  }
 
     
 }
@@ -50,6 +53,10 @@ function setup() {
 
 
 function draw() {
+
+  // if(frameCount%40===0){
+  //   particles.push(new Particle(random(10,790),10,10));
+  // }
   background("black");
   textSize(20)
  
@@ -65,6 +72,9 @@ function draw() {
   for (var k = 0; k < divisions.length; k++) {
     divisions[k].display();
   }
+  for (var i = 0; i < particles.length; i++) {
+    particles[i].display();  
+ }
 
   //muestra las partículas 
  // if(ball!=null)
